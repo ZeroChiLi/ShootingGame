@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2d9e02946692a4780329d9d28a2070, type: 3}
+  m_Name: FristWeaponConfig
+  m_EditorClassIdentifier: 
+  BulletConfig: {fileID: 11400000, guid: 3cb1a02686bee6e45aa0df8f4ca094df, type: 2}
+  FireEffect: {fileID: 5899942725711456051, guid: 366ce191eb086c74f83821e191e70494,
+    type: 3}
+  BulletSpeed: 400
+  Accuracy: 45
+  Interval: 0.1
+  Recoil: 400
+  BulletCount: 5

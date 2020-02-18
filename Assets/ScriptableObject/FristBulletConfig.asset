@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4208f982c3f2844e979f24edda23975, type: 3}
+  m_Name: FristBulletConfig
+  m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 3872725645352424798, guid: 8fbbfce0dcb9b6d49977605c4d0f8080,
+    type: 3}
+  ShellPrefab: {fileID: 2956437576646768706, guid: 86e234b112e253045970ca0b307c6bae,
+    type: 3}
+  HitEffect: {fileID: 5899942725711456051, guid: d51df44de6f4dbd448f6f5abe7cfee4c,
+    type: 3}
+  AttactHurt: 5
+  ImpactRange: 10
