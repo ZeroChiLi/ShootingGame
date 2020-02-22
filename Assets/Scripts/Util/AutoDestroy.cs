@@ -17,7 +17,13 @@ public class AutoDestroy : MonoBehaviour
     {
         if (_deleteTime < Time.time)
         {
-            Object.Destroy(gameObject);
+            Destroy();
         }
+    }
+
+    public void Destroy()
+    {
+        Object.Destroy(gameObject);
+
     }
 }

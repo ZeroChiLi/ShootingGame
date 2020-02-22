@@ -37,6 +37,11 @@ public class BulletBase : MonoBehaviour, IBullet
             _temGo.transform.position = transform.position;
         }
         CameraController.Instance.PlayShake(_config.ImpactRange / 200, _config.ImpactRange / 20);
+        OnHit();
+    }
+
+    virtual protected void OnHit()
+    {
         Destroy(gameObject);
     }
 
