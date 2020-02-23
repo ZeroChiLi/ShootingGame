@@ -17,4 +17,4 @@ MonoBehaviour:
   DefualtMoveDir: 1
   TotalCount: 300
   DelaySpawnTime: 3
-  SpawnIntervalTime: 0.2
+  SpawnIntervalTime: 1

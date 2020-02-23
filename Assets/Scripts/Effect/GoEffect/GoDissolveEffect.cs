@@ -112,77 +112,39 @@ public class GoDissolveEffect : GoEffectBase
     }
 
     public Material _Material;
-    public float _Duration = 3.0f;
-    public float _Delay = 1;
-    public bool _PlayAtAwake = true;
-    public bool _RevertAtStop = true;
     public AnimationCurve _Value = AnimationCurve.Linear(0, 0, 1, 1);
-    public UnityEvent _FinishedCallback;
 
-    private float _StartDissolveTime;  //开始特效时间
-    private bool _isRuning = false;         //是否在运行
-                                            // 溶解现场
+    // 溶解现场
     private DissolveContext _DissolveContext = new DissolveContext();
 
-    public override void Init(GameObject go,object context)
+    public override bool IsValid()
+    {
+        return _Material != null;
+    }
+
+    public override void Init(GameObject go, object context)
     {
         base.Init(go, context);
-        _FinishedCallback = (UnityEvent)context;
+        _DissolveContext.Init(_SrcGo.GetComponentsInChildren<MeshRenderer>(), _Material);
     }
 
     public override void Play()
     {
-        _isRuning = true;
-        _StartDissolveTime = Time.time;
+        base.Play();
         _DissolveContext.TurnDissolve();
     }
 
     public override void Restore()
     {
+        _DissolveContext.SetDissolveMatFloat("_DissolveThreshold", 0f);
         _DissolveContext.TurnOriginal();
     }
 
-    public override void Stop()
+    protected override void OnUpdate(float playTime)
     {
-        _isRuning = false;
-        if (_RevertAtStop)
-        {
-            _DissolveContext.SetDissolveMatFloat("_DissolveThreshold", 0f);
-            _DissolveContext.TurnOriginal();
-        }
-    }
-    
-    void Start()
-    {
-        _DissolveContext.Init(_SrcGo.GetComponentsInChildren<MeshRenderer>(), _Material);
-        if (_PlayAtAwake)
-        {
-            Init(gameObject, _FinishedCallback);
-            Play();
-        }
-    }
-    
-    void Update()
-    {
-        if (!_isRuning)
-            return;
 
-        float curTime = Time.time;
-        if (_StartDissolveTime + _Delay + _Duration < curTime)
-        {
-            if (_FinishedCallback != null)
-                _FinishedCallback.Invoke();
-            Stop();
-            return;
-        }
-        if (_StartDissolveTime + _Delay > curTime)
-        {
-            return;
-        }
-
-        float value = _Value.Evaluate((curTime - _StartDissolveTime - _Delay) / _Duration);
+        float value = _Value.Evaluate(playTime / _Duration);
         _DissolveContext.SetDissolveMatFloat("_DissolveThreshold", value);
-
-
     }
+
 }

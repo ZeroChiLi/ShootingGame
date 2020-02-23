@@ -16,7 +16,7 @@ MonoBehaviour:
     type: 3}
   ShellPrefab: {fileID: 2956437576646768706, guid: 86e234b112e253045970ca0b307c6bae,
     type: 3}
-  HitEffect: {fileID: 5899942725711456051, guid: d51df44de6f4dbd448f6f5abe7cfee4c,
+  HitEffect: {fileID: 534942075374477053, guid: 4fb59b16422549f42abed51507971a7b,
     type: 3}
   AttactHurt: 5
   ImpactRange: 10

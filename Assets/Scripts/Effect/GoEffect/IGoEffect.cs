@@ -9,5 +9,5 @@ public interface IGoEffect
     void Play();
     void Stop();
     void Restore();
-
+    bool IsValid();
 }
