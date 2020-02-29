@@ -96,7 +96,7 @@ Shader "Custom/DissolveEffect"
 	SubShader
 	{
 		Tags{ "RenderType" = "Opaque" }
-			Pass
+		Pass
 		{
 			CGPROGRAM
 			#pragma vertex vert

@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 3345352821693402497}
   - component: {fileID: 5804176351468101636}
   - component: {fileID: 6351787725514152465}
+  - component: {fileID: 5904032716277625436}
   m_Layer: 12
   m_Name: Enemy
   m_TagString: Untagged
@@ -493,6 +494,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _footPos: {fileID: 6789028586391591821}
   _walkDustEffect: {fileID: 0}
+  _idleSound: {fileID: 0}
+  _walkSound: {fileID: 0}
 --- !u!54 &5804176351468101636
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -558,6 +561,22 @@ MonoBehaviour:
   _width: 0.05
   _color: {r: 1, g: 1, b: 1, a: 1}
   _duration: 0.5
+--- !u!114 &5904032716277625436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2217103169576629367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71938ecb1a16d448ab100c4957e07de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _material: {fileID: 2100000, guid: 8521dac642e151643ac23da2a5ab439a, type: 2}
+  _ArrMeshRender: []
+  _color: {r: 0, g: 0, b: 1, a: 1}
+  _amount: 2
 --- !u!1 &2476973948882938374
 GameObject:
   m_ObjectHideFlags: 0
