@@ -16,14 +16,14 @@
   - 参考：https://blog.csdn.net/puppet_master/article/details/72455945
   - 原理：噪声纹理，低于阈值的直接剔除；接近阈值的，做颜色插值，渐变效果
   - 文件："Assets/Shader/DissolveEffect.shader"; "Assets/Scripts/Effect/GoEffect/GoDissolveEffect.cs"
-- 震荡波动
+- 震荡波动（子弹碰撞）
 
   - 原理：球体通过GrabPass获取屏幕纹理，读uv时，加上球体法线外扩，噪声纹理偏移；缩放，透明
   - 文件："Assets/Shader/BlastWaveEffect.shader"; "Assets/Scripts/Effect/GoEffect/GoBlastWaveEffect.cs"
-- 遮挡高亮
+- 遮挡高亮（敌人被墙体挡住）
   - 原理：多渲染一次，不写入深度就好了
   - 文件："Assets/Shader/OcclusionHighLight.shader"; 
-- 遮挡消融
+- 遮挡消融（玩家被墙体挡住）
   - 参考：https://blog.csdn.net/puppet_master/article/details/73478905
   - 原理：根据相对屏幕位置和对象距离，直接对墙体做消融即可
   - 文件："Assets/Shader/OcclusionDissolve.shader"; 
