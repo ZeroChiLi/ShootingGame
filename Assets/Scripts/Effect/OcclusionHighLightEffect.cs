@@ -35,8 +35,10 @@ public class OcclusionHighLightEffect : MonoBehaviour
         mat.SetFloat("_Amount", _amount);
         for (int i = 0; i < _ArrMeshRender.Length; i++)
         {
-            List<Material> mats = new List<Material>(_ArrMeshRender[i].materials);
+            var srcMats = _ArrMeshRender[i].materials;
+            List<Material> mats = new List<Material>(srcMats);
             mats.Add(mat);
+            //mats.AddRange(srcMats);
             _ArrMeshRender[i].materials = mats.ToArray();
         }
     }

@@ -1071,6 +1071,7 @@ GameObject:
   - component: {fileID: 2217103169576629369}
   - component: {fileID: 4265712763498340139}
   - component: {fileID: 1978181117}
+  - component: {fileID: 1627728092821983147}
   - component: {fileID: 1978181114}
   - component: {fileID: 1978181118}
   m_Layer: 11
@@ -1202,6 +1203,31 @@ MonoBehaviour:
   _width: 0.05
   _color: {r: 1, g: 0, b: 0, a: 1}
   _duration: 0.5
+--- !u!114 &1627728092821983147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2217103169576629367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 288683c893428104d9e03dd44eafd9f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SrcGo: {fileID: 2217103169576629367}
+  _Duration: -1
+  _Delay: 0
+  _PlayAtAwake: 1
+  _RestoreAtStop: 1
+  _FinishedCallback:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  _Material: {fileID: 2100000, guid: cca65ec86bf261b4f8c6acf5090f4a04, type: 2}
+  _SampleCount: 5
+  _SampleInterval: 0.1
 --- !u!82 &1978181114
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1875,6 +1901,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2211517484219258854, guid: 39b72c90c63572947b9ff986b8fde811,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211517484219258854, guid: 39b72c90c63572947b9ff986b8fde811,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211517484219258854, guid: 39b72c90c63572947b9ff986b8fde811,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737881296228462285, guid: 39b72c90c63572947b9ff986b8fde811,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737881296228462285, guid: 39b72c90c63572947b9ff986b8fde811,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737881296228462285, guid: 39b72c90c63572947b9ff986b8fde811,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 6468803112852489679, guid: 39b72c90c63572947b9ff986b8fde811,
         type: 3}
       propertyPath: _firePoint
@@ -1885,36 +1941,6 @@ PrefabInstance:
       propertyPath: _clipPoint
       value: 
       objectReference: {fileID: 2613661796175740758}
-    - target: {fileID: 8737881296228462285, guid: 39b72c90c63572947b9ff986b8fde811,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8737881296228462285, guid: 39b72c90c63572947b9ff986b8fde811,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8737881296228462285, guid: 39b72c90c63572947b9ff986b8fde811,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2211517484219258854, guid: 39b72c90c63572947b9ff986b8fde811,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2211517484219258854, guid: 39b72c90c63572947b9ff986b8fde811,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2211517484219258854, guid: 39b72c90c63572947b9ff986b8fde811,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39b72c90c63572947b9ff986b8fde811, type: 3}
 --- !u!4 &922988651315110080 stripped

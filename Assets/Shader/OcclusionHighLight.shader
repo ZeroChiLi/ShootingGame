@@ -12,7 +12,7 @@ Shader "Custom/OcclusionHighLight"
  
 	SubShader
 	{
-		Tags{ "Queue" = "Geometry+100" "RenderType" = "Opaque" }
+		Tags{ "Queue" = "Transparent+1" "RenderType" = "Opaque" }
 		
 		Pass
 		{

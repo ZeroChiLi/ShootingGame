@@ -7,8 +7,8 @@ using UnityEngine.Events;
 abstract public class GoEffectBase : MonoBehaviour, IGoEffect
 {
     [SerializeField] protected GameObject _SrcGo;
-    [SerializeField] protected float _Duration = 3.0f;
-    [SerializeField] protected float _Delay = 1;
+    [SerializeField] protected float _Duration = -1f;
+    [SerializeField] protected float _Delay = 0f;
     [SerializeField] protected bool _PlayAtAwake = true;
     [SerializeField] protected bool _RestoreAtStop = true;
     [SerializeField] protected UnityEvent _FinishedCallback;
@@ -47,7 +47,7 @@ abstract public class GoEffectBase : MonoBehaviour, IGoEffect
         _IsRunning = true;
         _StartTime = Time.time;
     }
-    
+
     virtual public void Stop()
     {
         _IsRunning = false;
@@ -74,7 +74,7 @@ abstract public class GoEffectBase : MonoBehaviour, IGoEffect
             return;
 
         _CurTime = Time.time;
-        if (_StartTime + _Delay + _Duration < _CurTime)
+        if (_Duration > 0 && (_StartTime + _Delay + _Duration < _CurTime))
         {
             if (_FinishedCallback != null)
                 _FinishedCallback.Invoke();

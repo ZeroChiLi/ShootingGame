@@ -27,6 +27,9 @@
   - 参考：https://blog.csdn.net/puppet_master/article/details/73478905
   - 原理：根据相对屏幕位置和对象距离，直接对墙体做消融即可
   - 文件："Assets/Shader/OcclusionDissolve.shader"; 
+- 残影（玩家幻影）
+  - 原理：用`CombineInstance`合并所有子网格，每次更新设置一下转换矩阵调整位置，然后调用DrawMesh渲染这个网格。
+  - 文件："Assets/Scripts/Effect/GoEffect/GoGhostEffect.cs"
 
 
 
@@ -40,6 +43,7 @@
 - 草地交互
 
   - 参考：https://zhuanlan.zhihu.com/p/74726921
+    - https://blog.csdn.net/qq_33967521/article/details/85205938
 - 体积光
 
   - 参考：https://blog.csdn.net/puppet_master/article/details/79859678 
@@ -60,5 +64,6 @@
   - 参考：https://blog.csdn.net/puppet_master/article/details/71437031
 - 冲刺屏幕径向模糊
   - 参考：https://blog.csdn.net/puppet_master/article/details/54566397
-- 幻影（运动模糊）
 - 天气（雨天）
+- 体积云
+  - 参考：https://blog.csdn.net/qq_33967521/article/details/102657017

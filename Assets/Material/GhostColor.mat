@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OcclusionHighLightEffect
-  m_Shader: {fileID: 4800000, guid: e1818282277b62341ba4f7988c5cba0f, type: 3}
+  m_Name: GhostColor
+  m_Shader: {fileID: 4800000, guid: 56067f806f3e61a4cb8caaa035e66c7c, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -18,14 +18,8 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_TexEnvs: []
     m_Floats:
-    - _Amount: 5
-    - _XRayAmount: 5.99
+    - _Width: -0.01
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _XRayColor: {r: 0, g: 0.029119492, b: 1, a: 1}
+    - _Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0.5019608}

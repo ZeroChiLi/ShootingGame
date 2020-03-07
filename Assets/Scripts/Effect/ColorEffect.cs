@@ -28,7 +28,7 @@ public class ColorEffect : PostEffectsBase
             if (_meshFilters == null)
                 _meshFilters = gameObject.GetComponentsInChildren<MeshFilter>();
             for (int j = 0; j < _meshFilters.Length; j++)
-                Graphics.DrawMesh(_meshFilters[j].sharedMesh, _meshFilters[j].transform.localToWorldMatrix, TargetMaterial, 0);   // 对选中物体再次渲染。
+                Graphics.DrawMesh(_meshFilters[j].mesh, _meshFilters[j].transform.localToWorldMatrix, TargetMaterial, 0);   // 对选中物体再次渲染。
 
         }
     }
