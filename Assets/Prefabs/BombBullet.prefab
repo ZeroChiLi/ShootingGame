@@ -77,5 +77,5 @@ MonoBehaviour:
   _config: {fileID: 11400000, guid: f662bad29f836454eaaafdf125838212, type: 2}
   _rigidbody: {fileID: 3009341531578620564}
   _lifeTime: 0.5
-  _bombEffect: {fileID: 4782030725945694215, guid: 1eb1381e6b531b840b7ab273b455f7af,
+  _bombEffect: {fileID: 218083752182898515, guid: fdd8990414e58914b9d9cf0916ef3973,
     type: 3}

@@ -32,7 +32,7 @@ abstract public class GoEffectBase : MonoBehaviour, IGoEffect
     /// 是否合法（能跑）
     /// </summary>
     /// <returns></returns>
-    abstract public bool IsValid();
+    virtual public bool IsValid() { return true; }
 
     virtual public void Init(GameObject go, object context)
     {

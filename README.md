@@ -1,6 +1,12 @@
 # ShootingGame
 - 射击游戏练习，注重游戏设计和Shader特效
 
+## 操作
+
+- 移动：左右方向键
+- 跳跃：空格键
+- 射击：左Shift键
+
 ## 游戏设计
 
 - Doc/30个让游戏更有感觉的小技巧.md
@@ -31,6 +37,11 @@
   - 原理：用`CombineInstance`合并所有子网格，每次更新设置一下转换矩阵调整位置，然后调用DrawMesh渲染这个网格。
   - 文件："Assets/Scripts/Effect/GoEffect/GoGhostEffect.cs"
 
+- 能量护盾（敌人概率自爆冲击波）
+  - 参考：https://zhuanlan.zhihu.com/p/35922906
+  - 原理：边缘高亮，相交高亮（计算场景深度 和 自身坐标深度比较 如果相近 说明接近相交处）
+  - 文件："Assets/Shader/TransparentShield.shader"; 
+
 
 
 ### 待做
@@ -38,8 +49,6 @@
 - 冲刺
 - 无敌1边缘光：
   - 参考：https://blog.csdn.net/puppet_master/article/details/53548134
-- 能量护盾
-  - 参考：https://zhuanlan.zhihu.com/p/35922906
 - 草地交互
 
   - 参考：https://zhuanlan.zhihu.com/p/74726921
