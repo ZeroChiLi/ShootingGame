@@ -17,6 +17,6 @@ MonoBehaviour:
   TurnSpeed: 600
   JumpSpeed: 1200
   SprintSpeed: 1500
-  SprintColdDownTime: 0.5
+  SprintColdDownTime: 0.3
   SlowScaleWhenDeadTime: 0.1
   SlowDurationWhenDeadTime: 5

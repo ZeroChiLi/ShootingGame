@@ -11,9 +11,10 @@ public class GoGhostEffect : GoEffectBase
         public Mesh _mesh;
         private CombineInstance[] _arrCombine;
         private MeshFilter[] _arrMeshFilter;
+        public float _endTime;
 
         // 初始化网格信息
-        public MeshContext(Transform target, ref MeshFilter[] arrMeshFilter)
+        public MeshContext(ref MeshFilter[] arrMeshFilter)
         {
             CombineInstance[] combineInstances = new CombineInstance[arrMeshFilter.Length]; //新建一个合并组，长度与 meshfilters一致
             for (int i = 0; i < arrMeshFilter.Length; i++)                                  //遍历
@@ -25,14 +26,16 @@ public class GoGhostEffect : GoEffectBase
             //_mesh.CombineMeshes(combineInstances);
             _arrCombine = combineInstances;
             _arrMeshFilter = arrMeshFilter;
-            Update(target);
         }
 
         // 更新网格位置
-        public void Update(Transform target)
+        public void Update(Transform target, float endTime)
         {
             if (_mesh == null)
                 return;
+
+            _endTime = endTime;
+
             for (int i = 0; i < _arrCombine.Length; i++)
                 _arrCombine[i].transform = _arrMeshFilter[i].transform.localToWorldMatrix;
 
@@ -40,8 +43,11 @@ public class GoGhostEffect : GoEffectBase
         }
 
         // 绘制网格
-        public void Draw(Material material)
+        public void Draw(Material material, float curTime)
         {
+            if (_endTime < curTime)
+                return;
+
             Graphics.DrawMesh(_mesh, Matrix4x4.identity, material, 0);  //合并网格的时候已经转出世界坐标了，所有直接用单位矩阵
         }
     }
@@ -49,6 +55,7 @@ public class GoGhostEffect : GoEffectBase
     public Material _Material;
     public int _SampleCount = 5;
     public float _SampleInterval = 0.1f;
+    public float _GhostLifeTime = 1f;
 
     private List<MeshContext> _contextList = new List<MeshContext>();
     private MeshFilter[] _arrMeshFilter;
@@ -75,6 +82,7 @@ public class GoGhostEffect : GoEffectBase
     protected override void OnUpdate(float playTime)
     {
         int contextCount = _contextList.Count;
+        var curTime = Time.time;
         if (_nextSampleTime < Time.time)
         {
             _nextSampleTime += _SampleInterval;
@@ -82,17 +90,14 @@ public class GoGhostEffect : GoEffectBase
 
             if (contextCount <= _curSampleIndex)
             {
-                var context = new MeshContext(transform, ref _arrMeshFilter);
+                var context = new MeshContext(ref _arrMeshFilter);
                 _contextList.Add(context);
             }
-            else
-            {
-                _contextList[_curSampleIndex].Update(transform);
-            }
+            _contextList[_curSampleIndex].Update(transform, _GhostLifeTime + curTime);
         }
         for (int i = 0; i < contextCount; i++)
         {
-            _contextList[i].Draw(_Material);
+            _contextList[i].Draw(_Material, curTime);
         }
     }
 

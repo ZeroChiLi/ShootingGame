@@ -1217,18 +1217,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _SrcGo: {fileID: 2217103169576629367}
-  _Duration: 0.8
+  _Duration: 1
   _Delay: 0
   _PlayAtAwake: 0
-  _RestoreAtStop: 1
+  _RestoreAtStop: 0
   _FinishedCallback:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   _Material: {fileID: 2100000, guid: cca65ec86bf261b4f8c6acf5090f4a04, type: 2}
-  _SampleCount: 6
+  _SampleCount: 10
   _SampleInterval: 0.1
+  _GhostLifeTime: 0.3
 --- !u!82 &1978181114
 AudioSource:
   m_ObjectHideFlags: 0

@@ -38,6 +38,12 @@ public class PlayerSprintSkill : PlayerColdDownSkillBase
             _ghostEffect.Restore();
             _ghostEffect.Play();
         }
+        if ( _heroCtrl.fireDustEffect)
+        {
+            GameObject _temGo = UnityEngine.Object.Instantiate(_heroCtrl.fireDustEffect);
+            _temGo.transform.SetParent(GameManager.Instance.EffectGoRoot);
+            _temGo.transform.position = _heroCtrl.footPos.position;
+        }
         return true;
     }
 }
