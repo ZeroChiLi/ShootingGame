@@ -16,7 +16,7 @@ public class PlayerBase : MonoBehaviour, IPlayer
     public PlayerConfig Config { get => _config; }
     public float HP { get; protected set; }
     public PlayerState State { get; protected set; }
-    public bool IsFighting { get; set; }
+    public bool IsLockTurn { get; set; }
     public Rigidbody Rigidbody { get => _rigidbody; }
     public Animator Animator { get => _animator; }
 

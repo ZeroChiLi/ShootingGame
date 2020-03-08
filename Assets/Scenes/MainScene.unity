@@ -605,6 +605,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876972575}
   m_CullTransparentMesh: 0
+--- !u!114 &1049110731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1627728092821983147, guid: aab50e115af7c2a4aa9226adb0a1e5c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2700901939066499210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 288683c893428104d9e03dd44eafd9f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1267302911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,21 +1121,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2217103169576629368, guid: aab50e115af7c2a4aa9226adb0a1e5c2,
-        type: 3}
-      propertyPath: isInvincible
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1627728092821983147, guid: aab50e115af7c2a4aa9226adb0a1e5c2,
         type: 3}
-      propertyPath: _SampleCount
-      value: 3
+      propertyPath: _Duration
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1627728092821983147, guid: aab50e115af7c2a4aa9226adb0a1e5c2,
         type: 3}
       propertyPath: _SampleInterval
-      value: 0.15
+      value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 1627728092821983147, guid: aab50e115af7c2a4aa9226adb0a1e5c2,
+        type: 3}
+      propertyPath: _SampleCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627728092821983147, guid: aab50e115af7c2a4aa9226adb0a1e5c2,
+        type: 3}
+      propertyPath: _PlayAtAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217103169576629369, guid: aab50e115af7c2a4aa9226adb0a1e5c2,
+        type: 3}
+      propertyPath: ghostEffect
+      value: 
+      objectReference: {fileID: 1049110731}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aab50e115af7c2a4aa9226adb0a1e5c2, type: 3}
 --- !u!1001 &4244981663085274527

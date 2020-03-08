@@ -33,7 +33,7 @@
   - 参考：https://blog.csdn.net/puppet_master/article/details/73478905
   - 原理：根据相对屏幕位置和对象距离，直接对墙体做消融即可
   - 文件："Assets/Shader/OcclusionDissolve.shader"; 
-- 残影（玩家幻影）
+- 残影（冲刺幻影）
   - 原理：用`CombineInstance`合并所有子网格，每次更新设置一下转换矩阵调整位置，然后调用DrawMesh渲染这个网格。
   - 文件："Assets/Scripts/Effect/GoEffect/GoGhostEffect.cs"
 
@@ -46,7 +46,6 @@
 
 ### 待做
 
-- 冲刺
 - 无敌1边缘光：
   - 参考：https://blog.csdn.net/puppet_master/article/details/53548134
 - 草地交互

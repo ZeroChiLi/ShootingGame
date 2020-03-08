@@ -24,7 +24,7 @@ public class EnemyController : PlayerControllerBase
 
     public void FixedUpdate()
     {
-        if (!_isMoving || _moveDir == MoveDirection.None || !_isOnGround)
+        if (!_isMoving || _moveDir == MoveDirection.None || !IsOnGround)
             return;
         UpdateMoveAndTurn(_moveDir == MoveDirection.Left ? -1 : 1);
     }

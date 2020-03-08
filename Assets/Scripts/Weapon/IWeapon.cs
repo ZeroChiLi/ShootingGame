@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IWeapon 
+public interface IWeapon
 {
+    bool Fire();
+    WeaponConfig Config { get; }
+
 }

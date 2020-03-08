@@ -5,25 +5,25 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerBase))]
 public class PlayerControllerBase : MonoBehaviour
 {
-    [SerializeField] protected Transform _footPos;
+    public Transform footPos;
     [SerializeField] private GameObject _walkDustEffect;
     [SerializeField] private AudioSource _idleSound;
     [SerializeField] private AudioSource _walkSound;
 
-    protected PlayerBase _player;
-    public PlayerConfig Config { get => _player.Config; }
+    public PlayerBase Player { get; protected set; }
+    public PlayerConfig Config { get => Player.Config; }
 
-    protected bool _isOnGround = false;
-    protected bool _isDead = false;
+    public bool IsOnGround { get; set; }
+    public bool IsDead { get; protected set; }
 
     readonly private Vector3 TurnLeft = new Vector3(0, -90f, 0);
     readonly private Vector3 TurnRight = new Vector3(0, 90f, 0);
     private bool _needTurn = false;
     private Vector3 _turnDir;
 
-    protected void Awake()
+    virtual protected void Awake()
     {
-        _player = GetComponent<PlayerBase>();
+        Player = GetComponent<PlayerBase>();
     }
 
     //private GameObject _temGo;
@@ -32,12 +32,12 @@ public class PlayerControllerBase : MonoBehaviour
     private float _temAbsEulerY;
     protected void UpdateMoveAndTurn(float moveX)
     {
-        if (_isDead)
+        if (IsDead)
             return;
         if (Mathf.Abs(moveX) >= 0.001f)
         {
             _temPos = transform.position;
-            _player.Rigidbody.velocity = new Vector3(moveX * Config.MoveSpeed, _player.Rigidbody.velocity.y, _player.Rigidbody.velocity.z);
+            Player.Rigidbody.velocity = new Vector3(moveX * Config.MoveSpeed, Player.Rigidbody.velocity.y, Player.Rigidbody.velocity.z);
 
             _temEuler = transform.localRotation.eulerAngles;
 
@@ -55,13 +55,13 @@ public class PlayerControllerBase : MonoBehaviour
                 transform.localRotation = Quaternion.Euler(_temEuler.y > 0 ? TurnRight : TurnLeft);
             }
 
-            if (_isOnGround)
+            if (IsOnGround)
             {
                 if (_walkDustEffect)
                 {
                     GameObject _temGo = Object.Instantiate(_walkDustEffect);
                     _temGo.transform.SetParent(GameManager.Instance.EffectGoRoot);
-                    _temGo.transform.position = _footPos.position;
+                    _temGo.transform.position = footPos.position;
                 }
                 PlayWalkSound(true);
             }
@@ -69,14 +69,14 @@ public class PlayerControllerBase : MonoBehaviour
             {
                 PlayWalkSound(false);
             }
-            _player.Animator.SetBool("IsWalking", true);
+            Player.Animator.SetBool("IsWalking", true);
         }
         else
         {
             PlayWalkSound(false);
-            _player.Animator.SetBool("IsWalking", false);
+            Player.Animator.SetBool("IsWalking", false);
         }
-        if (!_player.IsFighting && _needTurn)
+        if (!Player.IsLockTurn && _needTurn)
         {
             transform.localRotation = Quaternion.RotateTowards(transform.localRotation, Quaternion.Euler(_turnDir), Time.deltaTime * Config.TurnSpeed);
         }
@@ -122,16 +122,16 @@ public class PlayerControllerBase : MonoBehaviour
 
     protected void OnCollisionEnter(Collision collision)
     {
-        if (_isDead)
+        if (IsDead)
             return;
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            _isOnGround = true;
+            IsOnGround = true;
         }
     }
 
     public void SetIsDead(bool isDead)
     {
-        _isDead = isDead;
+        IsDead = isDead;
     }
 }

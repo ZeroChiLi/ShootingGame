@@ -4,53 +4,57 @@ using UnityEngine;
 
 public class HeroController : PlayerControllerBase
 {
+    public GoGhostEffect ghostEffect;
+    public GameObject fireDustEffect;
+    public Animator handAnimator;
     [SerializeField] private Transform _weaponSlot;
     [SerializeField] private WeaponBase _curWeapon;
-    [SerializeField] private GameObject _fireDustEffect;
-    [SerializeField] private Animator _handAnimator;
 
+    protected List<IPlayerSkill> playerSkills = new List<IPlayerSkill>()
+    {
+        new PlayerJumpSkill(),
+        new PlayerSprintSkill(),
+        new WepaonFireSkill(),
+    };
+    private int _skillCount;
+
+    override protected void Awake()
+    {
+        base.Awake();
+        _skillCount = playerSkills.Count;
+    }
+
+    protected void Start()
+    {
+        for (int i = 0; i < _skillCount; i++)
+        {
+            playerSkills[i].Init(this);
+        }
+    }
 
     public void FixedUpdate()
     {
-        if (_player.State == PlayerState.Dead)
+        if (Player.State == PlayerState.Dead)
             return;
-        UpdateFire();
+        for (int i = 0; i < _skillCount; i++)
+        {
+            var curTime = Time.time;
+            playerSkills[i].Update(curTime);
+        }
+        for (int i = 0; i < _skillCount; i++)
+        {
+            if (playerSkills[i].ReadyToPlay())
+            {
+                playerSkills[i].Play();
+            }
+        }
         var inputX = Input.GetAxis("Horizontal");
         UpdateMoveAndTurn(inputX);
-        UpdateJump();
-        CameraController.Instance.SetTarget(_player.transform, GetCurDirection());
+        CameraController.Instance.SetTarget(Player.transform, GetCurDirection());
     }
-
-    private void UpdateJump()
+    
+    public IWeapon GetCurWeapon()
     {
-        if (_isOnGround && Input.GetKeyDown(KeyCode.Space))
-        {
-            _isOnGround = false;
-            _player.Rigidbody.AddForce(Vector3.up * Config.JumpSpeed);
-        }
-    }
-
-    //private GameObject _temGo;
-    private void UpdateFire()
-    {
-        if (_curWeapon && Input.GetKey(KeyCode.LeftShift))
-        {
-            if (_curWeapon.Fire())
-            {
-                _player.Rigidbody.AddForce(-_player.transform.forward * _curWeapon.Config.Recoil);
-                if (_isOnGround && _fireDustEffect)
-                {
-                    GameObject _temGo = Object.Instantiate(_fireDustEffect);
-                    _temGo.transform.SetParent(GameManager.Instance.EffectGoRoot);
-                    _temGo.transform.position = _footPos.position;
-                }
-                _handAnimator.SetTrigger("Fire");
-            }
-            _player.IsFighting = true;
-        }
-        else
-        {
-            _player.IsFighting = false;
-        }
+        return _curWeapon;
     }
 }
