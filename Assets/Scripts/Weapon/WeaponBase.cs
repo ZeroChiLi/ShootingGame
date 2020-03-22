@@ -32,10 +32,13 @@ public class WeaponBase : MonoBehaviour, IWeapon
             _temGo = Object.Instantiate(_config.BulletConfig.BulletPrefab);
             _temGo.transform.SetParent(GameManager.Instance.BulletGoRoot);
             _temGo.transform.position = _firePoint.position;
+            var rotateOffsetY = (Random.value - 0.5f) * 2 * _config.Accuracy;
+            var rotateOffsetX = (Random.value - 0.5f) * 2 * _config.Accuracy;
+
             _temGo.transform.rotation = _firePoint.rotation;
             _temBullet = _temGo.GetComponent<BulletBase>();
             var value = _firePoint.forward * _config.BulletSpeed;
-            _temBullet.Fire(new Vector3(value.z, (Random.value - 0.5f) * 2 * _config.Accuracy, 0));
+            _temBullet.Fire(new Vector3(value.z, rotateOffsetY, rotateOffsetX));
 
         }
         if (_temBullet && _temBullet.Config.ShellPrefab)

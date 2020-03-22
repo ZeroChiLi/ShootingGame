@@ -33,6 +33,7 @@ public class GoBlastWaveEffect : GoScaleEffect
 
     protected override void OnUpdate(float playTime)
     {
+        base.OnUpdate(playTime);
         float alpha = _AlphaCurve.Evaluate((playTime) / _Duration);
         for (int i = 0; i < _ArrMeshRender.Length; i++)
         {

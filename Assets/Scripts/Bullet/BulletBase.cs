@@ -11,16 +11,19 @@ public class BulletBase : MonoBehaviour, IBullet
     protected float _destoryTime = 0f;
     public BulletConfig Config { get => _config; }
 
+    public float srcRotateY = 0;
+
     virtual public void Fire(Vector3 vec3)
     {
         _rigidbody.AddForce(vec3);
         _fireTime = Time.time;
         _destoryTime = _fireTime + _lifeTime;
-
+        srcRotateY = transform.rotation.eulerAngles.y;
     }
 
     public void Update()
     {
+        transform.rotation = Quaternion.Euler(0, srcRotateY - transform.forward.z * _rigidbody.velocity.z, _rigidbody.velocity.y);
         if (_destoryTime <= Time.time)
         {
             Destroy(gameObject);

@@ -347,7 +347,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -8, y: -8}
-  m_SizeDelta: {x: 128, y: 96}
+  m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &699037018
 MonoBehaviour:
@@ -672,13 +672,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267302911}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: -100}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
 --- !u!114 &1267302915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1961914032}
-  _offset: {x: 0, y: 3, z: -50}
+  _offset: {x: 0, y: 30, z: 0}
 --- !u!1 &1628192360
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,7 +896,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -8, y: -8}
-  m_SizeDelta: {x: 128, y: 96}
+  m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1803616231
 MonoBehaviour:
@@ -1111,22 +1111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1627728092821983147, guid: aab50e115af7c2a4aa9226adb0a1e5c2,
         type: 3}
-      propertyPath: _RestoreAtStop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1627728092821983147, guid: aab50e115af7c2a4aa9226adb0a1e5c2,
-        type: 3}
-      propertyPath: _SampleCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1627728092821983147, guid: aab50e115af7c2a4aa9226adb0a1e5c2,
-        type: 3}
-      propertyPath: _GhostLifeTime
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1627728092821983147, guid: aab50e115af7c2a4aa9226adb0a1e5c2,
-        type: 3}
-      propertyPath: _Duration
+      propertyPath: _PlayAtAwake
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
