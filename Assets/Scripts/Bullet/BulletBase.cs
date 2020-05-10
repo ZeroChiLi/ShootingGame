@@ -9,11 +9,19 @@ public class BulletBase : MonoBehaviour, IBullet
     [SerializeField] protected float _lifeTime = 3f;
     protected float _fireTime = 0f;
     protected float _destoryTime = 0f;
+    protected MeshRenderer _meshRenderer;
     public BulletConfig Config { get => _config; }
     private Vector3 _lastPosition;
     private bool _isFire = false;
+    private bool _isOnCollision = false;
+    private bool _isOnHit = false;
 
     public float srcRotateY = 0;
+
+    virtual protected void Awake()
+    {
+        _meshRenderer = GetComponentInChildren<MeshRenderer>();
+    }
 
     virtual public void Fire(Vector3 vec3)
     {
@@ -50,8 +58,17 @@ public class BulletBase : MonoBehaviour, IBullet
 
     private GameObject _temGo;
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (_meshRenderer != null)
+        {
+            _meshRenderer.enabled = false;
+        }
+    }
+
     virtual protected void OnHit(RaycastHit hit)
     {
+        _isOnHit = true;
         if (_config.HitEffect)
         {
             _temGo = Object.Instantiate(_config.HitEffect);
@@ -61,5 +78,5 @@ public class BulletBase : MonoBehaviour, IBullet
         CameraController.Instance.PlayShake(_config.ImpactRange / 200, _config.ImpactRange / 20);
         Destroy(gameObject);
     }
-
+    
 }
