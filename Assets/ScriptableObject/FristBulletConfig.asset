@@ -20,3 +20,11 @@ MonoBehaviour:
     type: 3}
   AttactHurt: 5
   ImpactRange: 10
+  HitEffectList:
+  - name: GreenGround
+    prefabs:
+    - {fileID: 1000010844420130, guid: 35f9b8db3ccb7344baa004f18bb6c9f1, type: 3}
+  - name: GrayWall
+    prefabs:
+    - {fileID: 1000010844420130, guid: c5fae4c7788efd044976706739703923, type: 3}
+    - {fileID: 1277954026192068, guid: f672df491cca92b49b7d4798d6b26658, type: 3}

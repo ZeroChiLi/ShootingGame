@@ -53,7 +53,9 @@
   - 原理：边缘高亮，相交高亮（计算场景深度 和 自身坐标深度比较 如果相近 说明接近相交处）
   - 文件："Assets/Shader/TransparentShield.shader"; 
 
-
+- 击中弹痕
+  - 参考：Unity官方粒子特效Demo
+  - 原理：射线命中点创建贴花特效，设置朝向为命中点法线方向。
 
 ### 待做
 
@@ -63,6 +65,7 @@
 
   - 参考：https://zhuanlan.zhihu.com/p/74726921
     - https://blog.csdn.net/qq_33967521/article/details/85205938
+    - https://www.cnblogs.com/murongxiaopifu/p/7572703.html
 - 体积光
 
   - 参考：https://blog.csdn.net/puppet_master/article/details/79859678 
@@ -91,6 +94,7 @@
   - 参考：http://walkingfat.com/simple-subsurface-scatterting-for-mobile-%EF%BC%88%E4%B8%80%EF%BC%89%E9%80%9A%E9%80%8F%E6%9D%90%E8%B4%A8%E7%9A%84%E6%AC%A1%E8%A1%A8%E9%9D%A2%E6%95%A3%E5%B0%84/
 - Boom
 - 卡通风格
-- 击中弹痕
-  - 参考：Unity官方粒子特效Demo
+- 分层背景
+- 电击效果
+- 命中敌人弹孔保留
 

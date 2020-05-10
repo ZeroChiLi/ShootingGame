@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Threshold: 0.845
+    - _Threshold: 1
     - _ViewThreshold: 1.19
     m_Colors:
     - _HighlightColor: {r: 0.41509432, g: 0.047575563, b: 0, a: 1}

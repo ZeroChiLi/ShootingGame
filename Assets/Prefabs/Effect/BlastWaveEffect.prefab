@@ -126,7 +126,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  _ArrMeshRender: []
   _BaseSize: 6
   _SizeCurve:
     serializedVersion: 2
@@ -152,6 +151,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _ArrMeshRender: []
   _AlphaCurve:
     serializedVersion: 2
     m_Curve:
