@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : PlayerBase
 {
+    [SerializeField] private BulletReceiver _bulletReceiver;
     [SerializeField] private GameObject _bombPrefab;
     [SerializeField] private float _bombProbaility = 0.1f;  // 自爆概率
 
@@ -19,6 +20,8 @@ public class Enemy : PlayerBase
     {
         base.Awake();
         _enemyController = GetComponent<EnemyController>();
+        if (_bulletReceiver != null)
+            _bulletReceiver.Bind(OnHitBullet);
     }
 
     protected new void Start()
@@ -32,15 +35,9 @@ public class Enemy : PlayerBase
         base.Update();
     }
 
-    private BulletBase _temBullet;
-    protected void OnCollisionEnter(Collision collision)
+    public void OnHitBullet(BulletBase bullet, Vector3 hit)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet"))
-        {
-            _temBullet = collision.gameObject.GetComponent<BulletBase>();
-
-            GetHurt(_temBullet.Config.AttactHurt, collision.transform.position, _temBullet.Config.ImpactRange);
-        }
+        GetHurt(bullet.Config.AttactHurt, bullet.transform.position, bullet.Config.ImpactRange);
     }
 
     protected override void OnDead(Vector3 hurtSrc, float range)
@@ -55,6 +52,6 @@ public class Enemy : PlayerBase
             _temGo.transform.position = transform.position;
             _temGo.GetComponent<BulletBase>().Fire(transform.position);
         }
-        
+
     }
 }

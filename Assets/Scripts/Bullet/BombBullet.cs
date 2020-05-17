@@ -5,7 +5,7 @@ using UnityEngine;
 public class BombBullet : BulletBase
 {
     [SerializeField] private GameObject _bombEffect;
-    
+
     public override void Fire(Vector3 vec3)
     {
         _fireTime = Time.time;
@@ -17,5 +17,10 @@ public class BombBullet : BulletBase
             _temGo.transform.SetParent(GameManager.Instance.EffectGoRoot);
             _temGo.transform.position = transform.position;
         }
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        OnHit(collider, transform.position, transform.position - transform.position);
     }
 }

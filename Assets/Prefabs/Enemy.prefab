@@ -436,6 +436,7 @@ GameObject:
   - component: {fileID: 5804176351468101636}
   - component: {fileID: 6351787725514152465}
   - component: {fileID: 5904032716277625436}
+  - component: {fileID: 5728488222862458660}
   m_Layer: 12
   m_Name: Enemy
   m_TagString: Untagged
@@ -477,6 +478,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 5804176351468101636}
   _animator: {fileID: 4724838921672399359}
   _hurtEffect: {fileID: 6351787725514152465}
+  _bulletReceiver: {fileID: 5728488222862458660}
   _bombPrefab: {fileID: 3872725645352424798, guid: 18f958477cee9464fbac9c904ebc85b0,
     type: 3}
   _bombProbaility: 0.25
@@ -492,7 +494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58df8c4f2c04c06459ff93028f83468b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _footPos: {fileID: 6789028586391591821}
+  footPos: {fileID: 0}
   _walkDustEffect: {fileID: 0}
   _idleSound: {fileID: 0}
   _walkSound: {fileID: 0}
@@ -577,6 +579,18 @@ MonoBehaviour:
   _ArrMeshRender: []
   _color: {r: 0, g: 0, b: 1, a: 1}
   _amount: 2
+--- !u!114 &5728488222862458660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2217103169576629367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b468d3d24b6dd8540a5bd252c7eb3875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2476973948882938374
 GameObject:
   m_ObjectHideFlags: 0

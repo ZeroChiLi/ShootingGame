@@ -18,7 +18,6 @@ public class PlayerSprintSkill : PlayerColdDownSkillBase
             return false;
 
         _ghostEffect = _heroCtrl.ghostEffect;
-
         coldDownTime = _heroCtrl.Config.SprintColdDownTime;
         return true;
     }
@@ -38,7 +37,7 @@ public class PlayerSprintSkill : PlayerColdDownSkillBase
             _ghostEffect.Restore();
             _ghostEffect.Play();
         }
-        if ( _heroCtrl.fireDustEffect)
+        if (_heroCtrl.fireDustEffect)
         {
             GameObject _temGo = UnityEngine.Object.Instantiate(_heroCtrl.fireDustEffect);
             _temGo.transform.SetParent(GameManager.Instance.EffectGoRoot);
