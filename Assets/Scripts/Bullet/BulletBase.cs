@@ -62,7 +62,7 @@ public class BulletBase : MonoBehaviour, IBullet
             var receiver = collider.GetComponentInParent<BulletReceiver>();
             if (receiver != null)
             {
-                receiver.OnHit(this, point);
+                receiver.OnHit(this, point, normal);
             }
         }
         CameraController.Instance.PlayShake(_config.ImpactRange / 200, _config.ImpactRange / 20);

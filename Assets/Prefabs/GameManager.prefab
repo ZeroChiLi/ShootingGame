@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1324366122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1324366123}
+  m_Layer: 0
+  m_Name: DeadModels
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1324366123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324366122}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8168053402140779138}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2085435283618994225
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,6 +92,7 @@ Transform:
   - {fileID: 8168053402833449842}
   - {fileID: 8168053402795929159}
   - {fileID: 28758103614808966}
+  - {fileID: 1324366123}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -78,8 +109,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpawnConfig: {fileID: 11400000, guid: a2793b7396e29484f99761a5bb3e2846, type: 2}
+  _theEndUI: {fileID: 0}
   _enemyGoRoot: {fileID: 8168053402833449842}
   _bulletGoRoot: {fileID: 8168053402795929159}
+  _deadModelGoRoot: {fileID: 1324366123}
   _effectGoRoot: {fileID: 28758103614808966}
 --- !u!114 &132421602
 MonoBehaviour:

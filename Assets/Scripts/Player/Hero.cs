@@ -21,19 +21,19 @@ public class Hero : PlayerBase
     {
         base.Update();
     }
-    
+
     protected void OnCollisionEnter(Collision collision)
     {
         if (!isInvincible && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            GetHurt(10, collision.transform.position, 10);
+            GetHurt(new HurtContext(10, 10, collision.transform.position, (collision.transform.position - transform.position).normalized));
             //OnDead(collision.transform.position, 10);
         }
     }
 
-    protected override void OnDead(Vector3 hurtSrc, float range)
+    protected override void OnDead(HurtContext context)
     {
-        base.OnDead(hurtSrc, range);
+        base.OnDead(context);
         MyTimeManager.Instance.StartHeroDead();
 
     }

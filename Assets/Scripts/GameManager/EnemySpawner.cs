@@ -50,6 +50,7 @@ public class EnemySpawner
     private void SpawnEnmey()
     {
         var go = Object.Instantiate(_config.Prefab);
+        go.name = $"Enemy_{_spawnCount}";
         go.transform.SetParent(_root);
         go.transform.position = _config.SpawnPos;
         var enemy = go.GetComponent<Enemy>();

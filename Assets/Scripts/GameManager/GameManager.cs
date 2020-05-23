@@ -9,9 +9,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _theEndUI;
     [SerializeField] private Transform _enemyGoRoot;
     [SerializeField] private Transform _bulletGoRoot;
-    public Transform BulletGoRoot { get => _bulletGoRoot; }
+    [SerializeField] private Transform _deadModelGoRoot;
     [SerializeField] private Transform _effectGoRoot;
+    public Transform BulletGoRoot { get => _bulletGoRoot; }
     public Transform EffectGoRoot { get => _effectGoRoot; }
+    public Transform DeadModelGoRoot { get => _deadModelGoRoot; }
     public Hero Hero { get; set; }
 
     private EnemySpawner _enemySpawner;

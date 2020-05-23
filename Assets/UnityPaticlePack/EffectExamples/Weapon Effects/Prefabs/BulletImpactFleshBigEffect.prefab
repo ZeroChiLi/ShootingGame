@@ -9196,7 +9196,7 @@ GameObject:
   - component: {fileID: 198000011143922816}
   - component: {fileID: 199000013883978412}
   m_Layer: 0
-  m_Name: BulletImpactFleshBigEffect 1
+  m_Name: BulletImpactFleshBigEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9211,7 +9211,7 @@ Transform:
   m_GameObject: {fileID: 1000013169864706}
   m_LocalRotation: {x: 0, y: 1, z: -0, w: -0.0000001872535}
   m_LocalPosition: {x: 8.2, y: 1.858, z: -0.728}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4000012095765798}
   - {fileID: 4000010518294418}

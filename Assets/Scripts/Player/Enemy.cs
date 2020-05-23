@@ -35,15 +35,13 @@ public class Enemy : PlayerBase
         base.Update();
     }
 
-    public void OnHitBullet(BulletBase bullet, Vector3 hit)
+    public void OnHitBullet(BulletBase bullet, Vector3 hit, Vector3 normal)
     {
-        GetHurt(bullet.Config.AttactHurt, bullet.transform.position, bullet.Config.ImpactRange);
+        GetHurt(new HurtContext(bullet.Config.AttactHurt, bullet.Config.ImpactRange, hit, normal));
     }
 
-    protected override void OnDead(Vector3 hurtSrc, float range)
+    protected override void OnDead(HurtContext context)
     {
-        base.OnDead(hurtSrc, range);
-
         MyTimeManager.Instance.StartEnemyDead();
         if (_bombPrefab && Random.value <= _bombProbaility)
         {
@@ -52,6 +50,8 @@ public class Enemy : PlayerBase
             _temGo.transform.position = transform.position;
             _temGo.GetComponent<BulletBase>().Fire(transform.position);
         }
+
+        base.OnDead(context);
 
     }
 }

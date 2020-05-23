@@ -7,13 +7,13 @@ using UnityEngine;
 
 public class BulletReceiver : MonoBehaviour
 {
-    private Action<BulletBase, Vector3> _onHit;
+    private Action<BulletBase, Vector3, Vector3> _onHit;
 
     /// <summary>
     /// 绑定回调
     /// </summary>
     /// <param name="onHitCallback"></param>
-    public void Bind(Action<BulletBase, Vector3> onHitCallback)
+    public void Bind(Action<BulletBase, Vector3, Vector3> onHitCallback)
     {
         _onHit = onHitCallback;
     }
@@ -30,9 +30,9 @@ public class BulletReceiver : MonoBehaviour
     /// 命中回调
     /// </summary>
     /// <param name="hitPoint"></param>
-    public void OnHit(BulletBase bullet, Vector3 hitPoint)
+    public void OnHit(BulletBase bullet, Vector3 hitPoint, Vector3 normal)
     {
-        _onHit?.Invoke(bullet, hitPoint);
+        _onHit?.Invoke(bullet, hitPoint, normal);
     }
 
 }

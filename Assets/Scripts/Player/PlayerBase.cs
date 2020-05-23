@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerBase : MonoBehaviour, IPlayer
 {
     [SerializeField] protected PlayerConfig _config;
-    [SerializeField] protected GameObject _normalModel;
-    [SerializeField] protected PlayerDeadModel _deadModel;
+    //[SerializeField] protected GameObject _normalModel;
+    [SerializeField] protected GameObject _deadModel;
     [SerializeField] protected Rigidbody _rigidbody;
     [SerializeField] protected Animator _animator;
     [SerializeField] protected ColorEffect _hurtEffect;
@@ -19,6 +19,7 @@ public class PlayerBase : MonoBehaviour, IPlayer
     public bool IsLockTurn { get; set; }
     public Rigidbody Rigidbody { get => _rigidbody; }
     public Animator Animator { get => _animator; }
+    private LinkedList<HurtContext> _hurtList = new LinkedList<HurtContext>();
 
     protected void Awake()
     {
@@ -36,9 +37,10 @@ public class PlayerBase : MonoBehaviour, IPlayer
     {
     }                               
 
-    virtual protected void GetHurt(float value, Vector3 src, float range)
+    virtual protected void GetHurt(HurtContext context)
     {
-        HP -= value;
+        _hurtList.AddFirst(context);
+        HP -= context.hurtValue;
         if (_hurtEffect)
         {
             _hurtEffect.Play();
@@ -46,21 +48,31 @@ public class PlayerBase : MonoBehaviour, IPlayer
         if (State != PlayerState.Dead && HP <= 0)
         {
             State = PlayerState.Dead;
-            OnDead(src, range);
+            OnDead(context);
         }
         else
         {
-            Rigidbody.AddForce((src - transform.position).normalized * range * 20);
+            Rigidbody.AddForce((context.hitPoint - transform.position).normalized * context.impactRange * 20);
 
         }
     }
 
-    virtual protected void OnDead(Vector3 hurtSrc, float range)
+    virtual protected void OnDead(HurtContext context)
     {
         _controller.SetIsDead(true);
         Rigidbody.isKinematic = true;
-        _normalModel.gameObject.SetActive(false);
-        _deadModel.gameObject.SetActive(true);
-        _deadModel.Play(range * 100, hurtSrc, range);
+        //_normalModel.gameObject.SetActive(false);
+        var deadModel = GameObject.Instantiate(_deadModel, GameManager.Instance.DeadModelGoRoot);
+        deadModel.name = $"DeadModel_{gameObject.name}";
+        deadModel.transform.position = transform.position;
+        deadModel.transform.rotation = transform.rotation;
+        deadModel.transform.localScale = transform.localScale;
+        var deadCom = deadModel.GetComponent<PlayerDeadModel>();
+        if (deadCom)
+        {
+            deadCom.Play(_hurtList);
+        }
+
+        GameObject.Destroy(gameObject);
     }
 }
