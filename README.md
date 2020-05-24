@@ -96,4 +96,6 @@
 - Boom
 - 卡通风格
 - 分层背景
+- 血迹 涂鸦
+  - 参考：https://forum.unity.com/threads/how-do-they-do-the-painting-in-splatoon.460663/
 
