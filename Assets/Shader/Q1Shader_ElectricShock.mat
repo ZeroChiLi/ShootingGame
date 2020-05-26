@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Q1Shader_ElectricShock
+  m_Shader: {fileID: 4800000, guid: a6783457b5d947d41bf74dc9b1e931e7, type: 3}
+  m_ShaderKeywords: _ISLERPEDGECOLOR_ON _IS_LERP_EDGE_COLOR
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _NoiseMap:
+        m_Texture: {fileID: 2800000, guid: c21d42050443e4e47a802e15bfbc6c1f, type: 3}
+        m_Scale: {x: 0.5, y: 0.1}
+        m_Offset: {x: 0, y: 1.93}
+    m_Floats:
+    - _EdgePower: -0.84
+    - _IsLerpEdgeColor: 1
+    - _LerpEdgeColor: 0
+    - _NoiseAmount: 0.18
+    - _Scale: 1
+    - _Threshold: 0.92
+    - _Width: 2.34
+    m_Colors:
+    - _Color: {r: 0, g: 0, b: 0, a: 0.5176471}
