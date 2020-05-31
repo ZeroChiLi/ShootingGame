@@ -13,5 +13,5 @@ public class PlayerConfig : ScriptableObject
     public float SprintColdDownTime = 0.5f;
     public float SlowScaleWhenDeadTime = 0.1f;      // 死亡瞬间的减速时间缩放
     public float SlowDurationWhenDeadTime = 3;      // 死亡瞬间的持续时间
-
+    public GameObject hitBloodPrefab;
 }

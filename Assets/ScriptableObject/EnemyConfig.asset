@@ -20,3 +20,5 @@ MonoBehaviour:
   SprintColdDownTime: 0.5
   SlowScaleWhenDeadTime: 0.01
   SlowDurationWhenDeadTime: 0.02
+  hitBloodPrefab: {fileID: 2759772991064595038, guid: 82e43984e0b98334195b2c37752dba3e,
+    type: 3}

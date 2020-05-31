@@ -52,11 +52,16 @@
 - 能量护盾（敌人概率自爆冲击波）
   - 参考：https://zhuanlan.zhihu.com/p/35922906
   - 原理：边缘高亮，相交高亮（计算场景深度 和 自身坐标深度比较 如果相近 说明接近相交处）
-  - 文件："Assets/Shader/TransparentShield.shader"; 
-
+  - 文件："Assets/Shader/TransparentShield.shader"
 - 击中弹痕
   - 参考：Unity官方粒子特效Demo
   - 原理：射线命中点创建贴花特效，设置朝向为命中点法线方向。
+- 血迹贴花
+  - 参考：https://forum.unity.com/threads/how-do-they-do-the-painting-in-splatoon.460663/
+  - https://blog.csdn.net/puppet_master/article/details/84310361
+  - https://forum.unity.com/threads/released-dynamic-decals.450820/
+  - 原理：根据深度将坐标投影
+  - 文件："Assets/Shader/DeferredDecal.shader"
 
 ### 待做
 
@@ -81,8 +86,6 @@
   - https://blog.csdn.net/mobilebbki399/article/details/50493117
 - 玻璃
 - 尸体四溅
-- 血色贴花
-  - 参考：https://blog.csdn.net/puppet_master/article/details/84310361
 - 屏幕扭曲
   - 参考：https://blog.csdn.net/puppet_master/article/details/71437031
 - 冲刺屏幕径向模糊
@@ -96,6 +99,4 @@
 - Boom
 - 卡通风格
 - 分层背景
-- 血迹 涂鸦
-  - 参考：https://forum.unity.com/threads/how-do-they-do-the-painting-in-splatoon.460663/
 

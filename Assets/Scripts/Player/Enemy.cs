@@ -38,6 +38,17 @@ public class Enemy : PlayerBase
     public void OnHitBullet(BulletBase bullet, Vector3 hit, Vector3 normal)
     {
         GetHurt(new HurtContext(bullet.Config.AttactHurt, bullet.Config.ImpactRange, hit, normal));
+        if (Config.hitBloodPrefab != null)
+        {
+            RaycastHit bloodHit;
+            if (Physics.Raycast(hit, Vector3.down, out bloodHit, 10, (1 << LayerMask.NameToLayer("Ground"))))
+            {
+                GameObject spawnedDecal = GameObject.Instantiate(Config.hitBloodPrefab, bloodHit.point + bloodHit.normal * 0.02f, bloodHit.collider.transform.rotation, GameManager.Instance.EffectGoRoot);
+                //spawnedDecal.transform.rotation = Quaternion.Euler(0, 0, 0);
+                var scale = Random.Range(2f, 4f);
+                spawnedDecal.transform.localScale = new Vector3(scale, 0.3f, scale);
+            }
+        }
     }
 
     protected override void OnDead(HurtContext context)

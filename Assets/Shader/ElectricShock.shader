@@ -1,4 +1,4 @@
-﻿Shader "Q1Shader/ElectricShock" {
+﻿Shader "Custom/ElectricShock" {
 	Properties {
 		_Threshold ("Threshold", Float) = 0.5
 		_EdgePower ("EdgePower", Float) = 2

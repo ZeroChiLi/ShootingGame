@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Q1Shader_ElectricShock
+  m_Name: ElectricShock
   m_Shader: {fileID: 4800000, guid: a6783457b5d947d41bf74dc9b1e931e7, type: 3}
-  m_ShaderKeywords: _ISLERPEDGECOLOR_ON _IS_LERP_EDGE_COLOR
+  m_ShaderKeywords: _IS_LERP_EDGE_COLOR
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -21,15 +21,15 @@ Material:
     m_TexEnvs:
     - _NoiseMap:
         m_Texture: {fileID: 2800000, guid: c21d42050443e4e47a802e15bfbc6c1f, type: 3}
-        m_Scale: {x: 0.5, y: 0.1}
-        m_Offset: {x: 0, y: 1.93}
+        m_Scale: {x: 0.17, y: 0.1}
+        m_Offset: {x: -0.47, y: 1.37}
     m_Floats:
-    - _EdgePower: -0.84
-    - _IsLerpEdgeColor: 1
+    - _EdgePower: 0.79
+    - _IsLerpEdgeColor: 0
     - _LerpEdgeColor: 0
-    - _NoiseAmount: 0.18
+    - _NoiseAmount: 0.16
     - _Scale: 1
-    - _Threshold: 0.92
+    - _Threshold: 0.95
     - _Width: 2.34
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 0.5176471}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}

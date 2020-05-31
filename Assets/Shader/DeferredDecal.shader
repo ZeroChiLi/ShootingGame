@@ -8,6 +8,7 @@ Shader "Decal/DeferredDecal"
 {
 	Properties
 	{
+		_Color ("Color", Color) = (0.9, 0.1, 0.1, 1)
 		_MainTex ("Texture", 2D) = "white" {}
 		_NormalClipThreshold("NormalClip Threshold", Range(0,0.3)) = 0.1
 	}
@@ -17,6 +18,7 @@ Shader "Decal/DeferredDecal"
 		Tags {"Queue"="Transparent+100"}
 		Pass
 		{
+			ZWrite OFF							// 关闭深度写入
 			Blend SrcAlpha OneMinusSrcAlpha
 			CGPROGRAM
 			#pragma vertex vert
@@ -37,6 +39,7 @@ Shader "Decal/DeferredDecal"
 				float3 yDir : TEXCOORD3;
 			};
  
+			float4 _Color;
 			sampler2D _MainTex;
 			sampler2D_float _CameraDepthTexture;
 			sampler2D _CameraGBufferTexture2;
@@ -47,7 +50,7 @@ Shader "Decal/DeferredDecal"
 				v2f o;
 				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.screenPos = ComputeScreenPos(o.vertex);
-				o.ray =UnityObjectToViewPos(v.vertex) * float3(-1,-1,1);
+				o.ray = UnityObjectToViewPos(v.vertex) * float3(-1,-1,1);
 				//将立方体y轴方向转化到世界空间，GBuffer的Normal是世界空间的
 				o.yDir = mul((float3x3)unity_ObjectToWorld, float3(0,1,0));
 				return o;
@@ -78,7 +81,7 @@ Shader "Decal/DeferredDecal"
 				float2 uv = (objectPos.xz + 0.5);
 				
 				fixed4 col = tex2D(_MainTex, uv);
-				return col;
+				return col * _Color;
 			}
 			ENDCG
 		}
