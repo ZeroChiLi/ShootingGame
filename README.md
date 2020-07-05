@@ -62,6 +62,9 @@
   - https://forum.unity.com/threads/released-dynamic-decals.450820/
   - 原理：根据深度将坐标投影
   - 文件："Assets/Shader/DeferredDecal.shader"
+- 屏幕空间的环境光遮蔽 SSAO
+  - 参考：https://blog.csdn.net/puppet_master/article/details/82929708
+  - 文件："Assets/Shader/ScreenSpaceAOEffect.shader"
 
 ### 待做
 
@@ -85,7 +88,14 @@
 - 水体
   - https://blog.csdn.net/mobilebbki399/article/details/50493117
 - 玻璃
-- 尸体四溅
+- 尸体四溅：ShatterTootKit
+  - 原理：
+    1. 搞一个平面：给定一个法线和一个原点可以创建出来
+    2. 判断模型所有顶点，原点到所有顶点的向量 点乘 平面法线可以分开平面前后两个顶点列表
+    3. 遍历三角形，如果三个点不在同一个部分中，那要切割一下
+       1. 三角形边和三角形点到原点的向量 相除可以切割交点
+    4. 两层遍历把所有切割相邻最近的连一起
+    5. 填充截面
 - 屏幕扭曲
   - 参考：https://blog.csdn.net/puppet_master/article/details/71437031
 - 冲刺屏幕径向模糊
