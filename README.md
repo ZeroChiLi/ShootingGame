@@ -64,6 +64,10 @@
   - 文件："Assets/Shader/DeferredDecal.shader"
 - 屏幕空间的环境光遮蔽 SSAO
   - 参考：https://blog.csdn.net/puppet_master/article/details/82929708
+  - 原理：
+    1. 采样点的半球范围内随机采样点（正态分布），采样点转到屏幕空间，计算当前深度和采样点深度，如果多数采样点深度大于自己的点，说明该点遮蔽多。
+    2. 注意深度相差大于半径的时候，就不算遮蔽，应该是处于边缘。
+    3. 双边滤波高斯模糊，高斯模糊的核 + 法线差别大的保留细节。用来保留细节同时又高斯模糊处理遮蔽颜色。
   - 文件："Assets/Shader/ScreenSpaceAOEffect.shader"
 
 ### 待做
