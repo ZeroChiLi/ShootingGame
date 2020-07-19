@@ -83,6 +83,11 @@
 
   - 参考：https://blog.csdn.net/puppet_master/article/details/79859678 
     - https://zhuanlan.zhihu.com/p/31618992
+  - 原理：
+    - 方法1：广告牌粒子
+    - 方法2：特殊网格（法线朝向类似光照方向），位置外扩法线方向渐变颜色
+    - 方法3：获取光源，顶点位置延光源方向外扩。
+    - 方法4：屏幕后处理：Boom光照+径向模糊。
 - 体积阴影
 
   - 参考：https://zhuanlan.zhihu.com/p/35553274
