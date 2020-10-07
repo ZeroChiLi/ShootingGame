@@ -5,10 +5,12 @@ using UnityEngine;
 public class FristBullet : BulletBase
 {
     private Vector3 _lastPosition;
+    protected Vector3 _fireStartVec3;
 
     public override void Fire(Vector3 vec3)
     {
         base.Fire(vec3);
+        _fireStartVec3 = vec3;
         _lastPosition = transform.position;
     }
 
@@ -22,15 +24,15 @@ public class FristBullet : BulletBase
         Debug.DrawRay(_lastPosition, shootDir, Color.Lerp(Color.green, Color.red, Time.time - _fireTime), shootDir.magnitude * 1.1f);
         if (Physics.Raycast(_lastPosition, shootDir, out hit, shootDir.magnitude * 1.1f, ~(1 << LayerMask.NameToLayer("Bullet"))))
         {
-            OnHit(hit.collider, hit.point, hit.normal);
+            OnHit(hit.collider, hit.point, hit.normal, shootDir);
         }
-        _lastPosition = curPosition;
+        _lastPosition = transform.position;
 
     }
 
-    protected override void OnHit(Collider collider, Vector3 point, Vector3 normal)
+    protected override bool OnHit(Collider collider, Vector3 point, Vector3 normal, Vector3 fromDir)
     {
-        base.OnHit(collider, point, normal);
+        var hitBulletReceiver = base.OnHit(collider, point, normal, fromDir);
         if (Config.HitEffectList != null && collider.sharedMaterial != null)
         {
             string materialName = collider.sharedMaterial.name;
@@ -48,10 +50,10 @@ public class FristBullet : BulletBase
                 }
             }
         }
-
+        return hitBulletReceiver;
     }
 
-    void SpawnDecal(Collider collider, Vector3 point, Vector3 normal, GameObject prefab)
+    private void SpawnDecal(Collider collider, Vector3 point, Vector3 normal, GameObject prefab)
     {
         GameObject spawnedDecal = GameObject.Instantiate(prefab, point, Quaternion.LookRotation(normal));
         spawnedDecal.transform.SetParent(collider.transform);

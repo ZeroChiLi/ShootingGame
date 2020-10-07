@@ -21,6 +21,6 @@ public class BombBullet : BulletBase
 
     private void OnTriggerEnter(Collider collider)
     {
-        OnHit(collider, transform.position, transform.position - transform.position);
+        OnHit(collider, transform.position, collider.transform.position - transform.position,transform.position - collider.transform.position);
     }
 }

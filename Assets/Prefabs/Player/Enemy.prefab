@@ -288,9 +288,8 @@ MonoBehaviour:
   _animator: {fileID: 4724838921672399359}
   _hurtEffect: {fileID: 6351787725514152465}
   _bulletReceiver: {fileID: 5728488222862458660}
-  _bombPrefab: {fileID: 3872725645352424798, guid: 18f958477cee9464fbac9c904ebc85b0,
-    type: 3}
-  _bombProbaility: 0.25
+  _bombPrefab: {fileID: 0}
+  _bombProbaility: 0
 --- !u!114 &3345352821693402497
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4208f982c3f2844e979f24edda23975, type: 3}
+  m_Name: GrenadeBulletConfig
+  m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 3872725645352424798, guid: bf5b6754d3548ab48a59faa51559c652,
+    type: 3}
+  ShellPrefab: {fileID: 0}
+  HitEffect: {fileID: 534942075374477053, guid: 4fb59b16422549f42abed51507971a7b,
+    type: 3}
+  AttactHurt: 0
+  ImpactRange: 10
+  HitEffectList:
+  - name: GreenGround
+    prefabs:
+    - {fileID: 1000010844420130, guid: 35f9b8db3ccb7344baa004f18bb6c9f1, type: 3}
+  - name: GrayWall
+    prefabs:
+    - {fileID: 1000010844420130, guid: c5fae4c7788efd044976706739703923, type: 3}
+    - {fileID: 1277954026192068, guid: f672df491cca92b49b7d4798d6b26658, type: 3}
+  - name: Enemy
+    prefabs:
+    - {fileID: 1000013169864706, guid: c472fdb6f2e97e74595f59a8e5b83dc0, type: 3}

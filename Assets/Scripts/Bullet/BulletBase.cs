@@ -51,25 +51,28 @@ public class BulletBase : MonoBehaviour, IBullet
     }
 
     private GameObject _temGo;
-    virtual protected void OnHit(Collider collider, Vector3 point, Vector3 normal)
+    virtual protected bool OnHit(Collider collider, Vector3 point, Vector3 normal, Vector3 fromDir)
     {
         _isOnHit = true;
+        bool hitBulletReceiver = false;
         if (_config.HitEffect)
         {
             _temGo = Object.Instantiate(_config.HitEffect);
             _temGo.transform.SetParent(GameManager.Instance.EffectGoRoot);
             _temGo.transform.position = point;
-            var receiver = collider.GetComponentInParent<BulletReceiver>();
-            if (receiver != null)
-            {
-                receiver.OnHit(this, point, normal);
-            }
+        }
+        var receiver = collider.GetComponentInParent<BulletReceiver>();
+        if (receiver != null)
+        {
+            receiver.OnHit(this, point, normal);
+            hitBulletReceiver = true;
         }
         CameraController.Instance.PlayShake(_config.ImpactRange / 200, _config.ImpactRange / 20);
         if (_isAutoDestory)
         {
             Destroy(gameObject);
         }
+        return hitBulletReceiver;
     }
 
 }

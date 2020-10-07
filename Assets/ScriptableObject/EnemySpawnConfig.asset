@@ -15,6 +15,6 @@ MonoBehaviour:
   Prefab: {fileID: 2217103169576629367, guid: f7bbabd2f7812e644a221ea6adb7825d, type: 3}
   SpawnPos: {x: 15, y: 8, z: 0}
   DefualtMoveDir: 1
-  TotalCount: 0
+  TotalCount: 300
   DelaySpawnTime: 3
   SpawnIntervalTime: 1

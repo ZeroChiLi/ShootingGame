@@ -59,7 +59,7 @@ public class Enemy : PlayerBase
             var _temGo = Object.Instantiate(_bombPrefab);
             _temGo.transform.SetParent(GameManager.Instance.BulletGoRoot);
             _temGo.transform.position = transform.position;
-            _temGo.GetComponent<BulletBase>().Fire(transform.position);
+            _temGo.GetComponent<BulletBase>().Fire(Vector3.zero);
         }
 
         base.OnDead(context);

@@ -17,4 +17,5 @@ MonoBehaviour:
   ShellPrefab: {fileID: 0}
   HitEffect: {fileID: 0}
   AttactHurt: 100
-  ImpactRange: 50
+  ImpactRange: 30
+  HitEffectList: []
