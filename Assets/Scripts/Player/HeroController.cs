@@ -6,15 +6,19 @@ public class HeroController : PlayerControllerBase
 {
     public GoGhostEffect ghostEffect;
     public GameObject fireDustEffect;
+    public GameObject changeWeaponEffect;
     public Animator handAnimator;
     [SerializeField] private Transform _weaponSlot;
     [SerializeField] private WeaponBase _curWeapon;
+    [SerializeField] private WeaponBase[] _weaponArr;
+    private int _curWeaponIndex = 0;
 
     protected List<IPlayerSkill> playerSkills = new List<IPlayerSkill>()
     {
         new PlayerJumpSkill(),
         new PlayerSprintSkill(),
         new WepaonFireSkill(),
+        new PlayerChangeWeaponSkill(),
     };
     private int _skillCount;
 
@@ -22,6 +26,10 @@ public class HeroController : PlayerControllerBase
     {
         base.Awake();
         _skillCount = playerSkills.Count;
+        if (_curWeapon == null && _weaponArr != null && _weaponArr.Length > 0)
+        {
+            _curWeapon = _weaponArr[0];
+        }
     }
 
     protected void Start()
@@ -56,5 +64,20 @@ public class HeroController : PlayerControllerBase
     public IWeapon GetCurWeapon()
     {
         return _curWeapon;
+    }
+
+    public IWeapon ChangeNextWeapon()
+    {
+        _curWeapon?.gameObject.SetActive(false);
+        ++_curWeaponIndex;
+        _curWeaponIndex %= _weaponArr.Length;
+        _curWeapon = _weaponArr[_curWeaponIndex];
+        _curWeapon?.gameObject.SetActive(true);
+        return _curWeapon;
+    }
+
+    public Transform GetWeaponSlot()
+    {
+        return _weaponSlot;
     }
 }

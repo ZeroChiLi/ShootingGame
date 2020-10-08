@@ -16,7 +16,7 @@ MonoBehaviour:
   FireEffect: {fileID: 5899942725711456051, guid: 366ce191eb086c74f83821e191e70494,
     type: 3}
   BulletSpeed: 150
-  Accuracy: 0
+  Accuracy: 15
   Interval: 1
   Recoil: 100
-  BulletCount: 5
+  BulletCount: 3

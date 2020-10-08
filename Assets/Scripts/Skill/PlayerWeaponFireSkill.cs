@@ -8,14 +8,12 @@ using UnityEngine;
 public class WepaonFireSkill : IPlayerSkill
 {
     private HeroController _heroCtrl;
-    private IWeapon _curWeapon;
 
     public bool Init(object context)
     {
         _heroCtrl = context as HeroController;
         if (_heroCtrl == null)
             return false;
-        _curWeapon = _heroCtrl.GetCurWeapon();
 
         return true;
     }
@@ -27,14 +25,15 @@ public class WepaonFireSkill : IPlayerSkill
 
     public bool ReadyToPlay()
     {
-        return _curWeapon != null && Input.GetKey(KeyCode.X);
+        return _heroCtrl.GetCurWeapon() != null && Input.GetKey(KeyCode.X);
     }
 
     public bool Play()
     {
-        if (_curWeapon.Fire())
+        IWeapon curWeapon = _heroCtrl.GetCurWeapon();
+        if (curWeapon != null && curWeapon.Fire())
         {
-            _heroCtrl.Player.Rigidbody.AddForce(-_heroCtrl.Player.transform.forward * _curWeapon.Config.Recoil);
+            _heroCtrl.Player.Rigidbody.AddForce(-_heroCtrl.Player.transform.forward * curWeapon.Config.Recoil);
             if (_heroCtrl.IsOnGround && _heroCtrl.fireDustEffect)
             {
                 GameObject _temGo = UnityEngine.Object.Instantiate(_heroCtrl.fireDustEffect);

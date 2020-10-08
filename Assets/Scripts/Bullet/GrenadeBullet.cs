@@ -45,7 +45,7 @@ public class GrenadeBullet : FristBullet
         }
         transform.position = point;
         var reflectVec = GetReflectVec(fromDir, normal);
-        _rigidbody.velocity = _rigidbody.velocity * 0f;
+        _rigidbody.velocity = _rigidbody.velocity * 0.1f;
         _rigidbody.AddForce(reflectVec * _fireStartVec3.magnitude * ( 1 - curHitTime / hitTime));
         return hitBulletReceiver;
     }
