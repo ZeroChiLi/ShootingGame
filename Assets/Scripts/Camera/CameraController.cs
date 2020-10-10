@@ -8,9 +8,12 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Vector3 _offset = new Vector3(0, 3, -10);
     [SerializeField] private float _smoothTime = 5f;
     [SerializeField] private float _dirOffest = 5f;
+    [SerializeField] private float _turnAngleRange = 15f;
+    [SerializeField] private float _turnAngleSpeed = 10f;
 
     private Vector3 _targetPos;
-    private Vector3 _smoothVel;
+    private Vector3 _targetAngle;
+    private Vector3 _posSmoothVel;
     private float _curOffest;
     private float _shakePower;
     private float _stopShakeTime;
@@ -29,7 +32,8 @@ public class CameraController : MonoBehaviour
         {
             _targetPos = _target.position + _offset;
             _targetPos.x += _curOffest;
-            transform.position = Vector3.SmoothDamp(transform.position, _targetPos, ref _smoothVel, _smoothTime);
+            transform.position = Vector3.SmoothDamp(transform.position, _targetPos, ref _posSmoothVel, _smoothTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(_targetAngle), Time.deltaTime * _turnAngleSpeed);
 
             if (_stopShakeTime > Time.time)
             {
@@ -42,18 +46,23 @@ public class CameraController : MonoBehaviour
     public void SetTarget(Transform target, MoveDirection direction = MoveDirection.None)
     {
         _target = target;
+        float angle = 0;
         switch (direction)
         {
             case MoveDirection.Left:
                 _curOffest = -_dirOffest;
+                angle = -_turnAngleRange;
                 break;
             case MoveDirection.Right:
                 _curOffest = _dirOffest;
+                angle = _turnAngleRange;
                 break;
             default:
                 _curOffest = 0f;
+                angle = 0f;
                 break;
         }
+        _targetAngle = new Vector3(0, angle, 0);
     }
 
     public void PlayShake(float power, float duration)

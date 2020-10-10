@@ -17,5 +17,6 @@ public class BulletConfig : ScriptableObject
     public GameObject HitEffect;    // 击中特效
     public int AttactHurt = 5;      // 伤害值
     public float ImpactRange = 10f; // 冲击范围
+    public float ImpactPower = 100f; // 冲击力（击退）
     public OnHitMaterialEffect[] HitEffectList; // 碰撞特效
 }

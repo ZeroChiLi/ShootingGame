@@ -19,6 +19,7 @@ MonoBehaviour:
     type: 3}
   AttactHurt: 0
   ImpactRange: 10
+  ImpactPower: 5
   HitEffectList:
   - name: GreenGround
     prefabs:

@@ -397,7 +397,9 @@ MonoBehaviour:
   _rigidbody: {fileID: 4265712763498340139}
   _animator: {fileID: 4724838921672399359}
   _hurtEffect: {fileID: 1978181117}
-  isInvincible: 1
+  hurtCollider: {fileID: 6802415677854596488}
+  isAlwaysInvincible: 0
+  hurtInvincibleDuration: 1
 --- !u!114 &2217103169576629369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +419,8 @@ MonoBehaviour:
   _walkSound: {fileID: 1978181118}
   ghostEffect: {fileID: 1627728092821983147}
   fireDustEffect: {fileID: 3800915269263786264, guid: 5300045ad26b68d4bb44cbcfe7c0f11f,
+    type: 3}
+  changeWeaponEffect: {fileID: 218083752182898515, guid: fb17d138e64e7244592baa64bc2f5e72,
     type: 3}
   handAnimator: {fileID: 1623380444}
   _weaponSlot: {fileID: 7573216279359125480}
@@ -488,7 +492,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   _width: 0.05
   _color: {r: 1, g: 0, b: 0, a: 1}
-  _duration: 0.5
+  _duration: 1
 --- !u!114 &1627728092821983147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,6 +1138,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrenadeGun
       objectReference: {fileID: 0}
+    - target: {fileID: 6244249464563980142, guid: 7f828bf3a7451b94a9a34795e4be5d18,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6468803112852489679, guid: 7f828bf3a7451b94a9a34795e4be5d18,
+        type: 3}
+      propertyPath: _config
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ee7002105d05c14a9b2526e16cb87e1,
+        type: 2}
+    - target: {fileID: 6468803112852489679, guid: 7f828bf3a7451b94a9a34795e4be5d18,
+        type: 3}
+      propertyPath: _firePoint
+      value: 
+      objectReference: {fileID: 6645264379715970967}
+    - target: {fileID: 6468803112852489679, guid: 7f828bf3a7451b94a9a34795e4be5d18,
+        type: 3}
+      propertyPath: _clipPoint
+      value: 
+      objectReference: {fileID: 4308655596582248124}
     - target: {fileID: 3907551800265181296, guid: 7f828bf3a7451b94a9a34795e4be5d18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1189,22 +1214,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6468803112852489679, guid: 7f828bf3a7451b94a9a34795e4be5d18,
-        type: 3}
-      propertyPath: _config
-      value: 
-      objectReference: {fileID: 11400000, guid: 8ee7002105d05c14a9b2526e16cb87e1,
-        type: 2}
-    - target: {fileID: 6468803112852489679, guid: 7f828bf3a7451b94a9a34795e4be5d18,
-        type: 3}
-      propertyPath: _firePoint
-      value: 
-      objectReference: {fileID: 6645264379715970967}
-    - target: {fileID: 6468803112852489679, guid: 7f828bf3a7451b94a9a34795e4be5d18,
-        type: 3}
-      propertyPath: _clipPoint
-      value: 
-      objectReference: {fileID: 4308655596582248124}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f828bf3a7451b94a9a34795e4be5d18, type: 3}
 --- !u!4 &4308655596582248124 stripped
@@ -1249,6 +1258,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FristGun
       objectReference: {fileID: 0}
+    - target: {fileID: 6468803112852489679, guid: 39b72c90c63572947b9ff986b8fde811,
+        type: 3}
+      propertyPath: _firePoint
+      value: 
+      objectReference: {fileID: 4879162422698313341}
+    - target: {fileID: 6468803112852489679, guid: 39b72c90c63572947b9ff986b8fde811,
+        type: 3}
+      propertyPath: _clipPoint
+      value: 
+      objectReference: {fileID: 2613661796175740758}
     - target: {fileID: 3907551800265181296, guid: 39b72c90c63572947b9ff986b8fde811,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1339,16 +1358,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 6468803112852489679, guid: 39b72c90c63572947b9ff986b8fde811,
-        type: 3}
-      propertyPath: _firePoint
-      value: 
-      objectReference: {fileID: 4879162422698313341}
-    - target: {fileID: 6468803112852489679, guid: 39b72c90c63572947b9ff986b8fde811,
-        type: 3}
-      propertyPath: _clipPoint
-      value: 
-      objectReference: {fileID: 2613661796175740758}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39b72c90c63572947b9ff986b8fde811, type: 3}
 --- !u!4 &2613661796175740758 stripped

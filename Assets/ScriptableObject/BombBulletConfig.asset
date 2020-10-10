@@ -18,4 +18,5 @@ MonoBehaviour:
   HitEffect: {fileID: 0}
   AttactHurt: 100
   ImpactRange: 30
+  ImpactPower: 30
   HitEffectList: []

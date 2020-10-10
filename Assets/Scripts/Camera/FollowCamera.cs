@@ -9,7 +9,10 @@ public class FollowCamera : MonoBehaviour
    
     void FixedUpdate()
     {
-        transform.position = _target.position + _offset;
+        if (_target != null)
+        {
+            transform.position = _target.position + _offset;
+        }
     }
     
 }

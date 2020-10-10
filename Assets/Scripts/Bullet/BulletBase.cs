@@ -67,7 +67,7 @@ public class BulletBase : MonoBehaviour, IBullet
             receiver.OnHit(this, point, normal);
             hitBulletReceiver = true;
         }
-        CameraController.Instance.PlayShake(_config.ImpactRange / 200, _config.ImpactRange / 20);
+        CameraController.Instance.PlayShake(_config.ImpactPower / 200, _config.ImpactPower / 20);
         if (_isAutoDestory)
         {
             Destroy(gameObject);

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 401172354517284547}
   - component: {fileID: 401172354517284549}
   - component: {fileID: 401172354517284546}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: RightHandMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 401172354579217353}
   - component: {fileID: 401172354579217355}
   - component: {fileID: 401172354579217352}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 401172354587924305}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 401172355091889458}
   - component: {fileID: 5278051289081725281}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: HeroDeadModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc723254f952f184e9c91fe2c941da2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _deadPower: 100
   _hitEffect: {fileID: 1000013169864706, guid: c472fdb6f2e97e74595f59a8e5b83dc0, type: 3}
   _cap: {fileID: 2861867794841472187}
   _body: {fileID: 219788487280828625}
@@ -244,7 +245,7 @@ GameObject:
   - component: {fileID: 401172355670961391}
   - component: {fileID: 401172355670961377}
   - component: {fileID: 401172355670961390}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: LeftHandMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +324,7 @@ GameObject:
   - component: {fileID: 401172355739593072}
   - component: {fileID: 401172355739593073}
   - component: {fileID: 219788487280828625}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +437,7 @@ GameObject:
   - component: {fileID: 401172355795551234}
   - component: {fileID: 401172355795551235}
   - component: {fileID: 2861867794841472187}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Cap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +545,7 @@ GameObject:
   - component: {fileID: 401172355821232596}
   - component: {fileID: 401172355821232598}
   - component: {fileID: 401172355821232599}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 401172355952022769}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +653,7 @@ GameObject:
   - component: {fileID: 401172355971338459}
   - component: {fileID: 401172355971338461}
   - component: {fileID: 401172355971338458}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -37,7 +37,7 @@ public class Enemy : PlayerBase
 
     public void OnHitBullet(BulletBase bullet, Vector3 hit, Vector3 normal)
     {
-        GetHurt(new HurtContext(bullet.Config.AttactHurt, bullet.Config.ImpactRange, hit, normal));
+        GetHurt(new HurtContext(bullet.Config.AttactHurt, bullet.Config.ImpactPower, hit, normal));
         if (Config.hitBloodPrefab != null)
         {
             RaycastHit bloodHit;
@@ -64,5 +64,6 @@ public class Enemy : PlayerBase
 
         base.OnDead(context);
 
+        GameObject.Destroy(gameObject);
     }
 }

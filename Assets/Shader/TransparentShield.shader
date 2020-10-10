@@ -3,6 +3,7 @@
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "black" {}
+		_TextureAlpha("TextureAlpha", Range(0.0, 1)) = 0 
 		_Threshold("Threshold", Range(0.0, 1)) = 1 
 		_ViewThreshold("ViewThreshold", Range(0.0, 2)) = 1 
 		_HighlightColor("HighlightColor", Color) = (1,1,1,1)
@@ -31,6 +32,7 @@
 
        		fixed _Threshold;
        		fixed _ViewThreshold;
+       		fixed _TextureAlpha;
 
        		fixed4 _HighlightColor;
 
@@ -73,6 +75,7 @@
 			fixed4 frag (v2f i) : SV_Target
 			{
 				float4 final = tex2D(_MainTex, i.uv);
+				final.a = _TextureAlpha;
 
 				fixed3 worldNormal = normalize(i.worldNormal);
             	fixed3 worldViewDir = normalize(i.worldViewDir);

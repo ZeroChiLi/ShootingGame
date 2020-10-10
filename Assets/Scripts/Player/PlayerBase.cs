@@ -52,7 +52,7 @@ public class PlayerBase : MonoBehaviour, IPlayer
         }
         else
         {
-            Rigidbody.AddForce((context.hitPoint - transform.position).normalized * context.impactRange * 20);
+            Rigidbody.AddForce((context.hitPoint - transform.position).normalized * context.impactRange);
 
         }
     }
@@ -73,6 +73,5 @@ public class PlayerBase : MonoBehaviour, IPlayer
             deadCom.Play(_hurtList);
         }
 
-        GameObject.Destroy(gameObject);
     }
 }

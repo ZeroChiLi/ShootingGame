@@ -391,9 +391,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1961914032}
-  _offset: {x: 0, y: 3, z: -13}
+  _offset: {x: 0, y: 3, z: -20}
   _smoothTime: 0.1
-  _dirOffest: 5
+  _dirOffest: 4
+  _turnAngleRange: 15
+  _turnAngleSpeed: 30
 --- !u!114 &534669907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,22 +1287,6 @@ PrefabInstance:
     - target: {fileID: 2319008662287475516, guid: aab50e115af7c2a4aa9226adb0a1e5c2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2217103169576629369, guid: aab50e115af7c2a4aa9226adb0a1e5c2,
-        type: 3}
-      propertyPath: changeWeaponEffect
-      value: 
-      objectReference: {fileID: 218083752182898515, guid: fb17d138e64e7244592baa64bc2f5e72,
-        type: 3}
-    - target: {fileID: 7808523965926113246, guid: aab50e115af7c2a4aa9226adb0a1e5c2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8346172646706028084, guid: aab50e115af7c2a4aa9226adb0a1e5c2,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

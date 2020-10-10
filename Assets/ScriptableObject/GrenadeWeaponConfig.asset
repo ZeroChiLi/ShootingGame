@@ -18,5 +18,5 @@ MonoBehaviour:
   BulletSpeed: 150
   Accuracy: 15
   Interval: 1
-  Recoil: 100
+  Recoil: 150
   BulletCount: 3

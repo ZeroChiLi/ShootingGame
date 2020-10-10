@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Hero : PlayerBase
 {
-    public bool isInvincible = true;    // 是否无敌
+    public Collider hurtCollider;
+    public bool isAlwaysInvincible = true;    // 是否无敌
+    public float hurtInvincibleDuration = 1f;   // 受击后无敌时间 
+    private bool _isHurtInvincible = false;      // 正在受击无敌
+    private float _nextNotInvincibleTime = 0f;   // 下一次解除无敌时间
 
     protected new void Awake()
     {
@@ -20,14 +24,22 @@ public class Hero : PlayerBase
     protected new void Update()
     {
         base.Update();
+        if (_isHurtInvincible && _nextNotInvincibleTime < Time.time)
+        {
+            hurtCollider.gameObject.layer = LayerMask.NameToLayer("Player");
+            _isHurtInvincible = false;
+        }
     }
 
     protected void OnCollisionEnter(Collision collision)
     {
-        if (!isInvincible && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (!isAlwaysInvincible && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             GetHurt(new HurtContext(10, 10, collision.transform.position, (collision.transform.position - transform.position).normalized));
             //OnDead(collision.transform.position, 10);
+            _isHurtInvincible = true;
+            _nextNotInvincibleTime = Time.time + hurtInvincibleDuration;
+            hurtCollider.gameObject.layer = LayerMask.NameToLayer("Invincible");
         }
     }
 
@@ -36,6 +48,7 @@ public class Hero : PlayerBase
         base.OnDead(context);
         MyTimeManager.Instance.StartHeroDead();
 
+        gameObject.SetActive(false);
     }
 
 }

@@ -27,4 +27,4 @@ Material:
     - _Threshold: 0.729
     - _ViewThreshold: 1.08
     m_Colors:
-    - _HighlightColor: {r: 0, g: 0.23885345, b: 1, a: 1}
+    - _HighlightColor: {r: 1, g: 0.62840414, b: 0, a: 1}

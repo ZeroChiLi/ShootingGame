@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db41698c1c8fb5647bfd5124dc9f21d9, type: 3}
   m_Name: EnemyConfig
   m_EditorClassIdentifier: 
-  MaxHP: 1
+  MaxHP: 40
   MoveSpeed: 12
   TurnSpeed: 600
   JumpSpeed: 1200
