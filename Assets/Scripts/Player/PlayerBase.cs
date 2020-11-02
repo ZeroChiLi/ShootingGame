@@ -35,7 +35,7 @@ public class PlayerBase : MonoBehaviour, IPlayer
 
     protected void Update()
     {
-    }                               
+    }
 
     virtual protected void GetHurt(HurtContext context)
     {
@@ -52,7 +52,10 @@ public class PlayerBase : MonoBehaviour, IPlayer
         }
         else
         {
-            Rigidbody.AddForce((context.hitPoint - transform.position).normalized * context.impactRange);
+            var power = (Vector3.up * 0.3f + context.hitPoint - transform.position).normalized * context.impactRange;
+            //Debug.Log($"受击！！{name}  :  {power} {(context.hitPoint - transform.position).normalized} {context.impactRange}");
+            Rigidbody.velocity = Vector3.zero;
+            Rigidbody.AddForce(power);
 
         }
     }
