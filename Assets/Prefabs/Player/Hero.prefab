@@ -54,10 +54,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c67148724d71d014f9c76d65aa4beab0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -65,6 +66,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -164,6 +166,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -175,6 +178,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -241,10 +245,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c67148724d71d014f9c76d65aa4beab0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -252,6 +257,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -318,10 +324,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c67148724d71d014f9c76d65aa4beab0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -329,6 +336,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -513,8 +521,6 @@ MonoBehaviour:
   _FinishedCallback:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   _Material: {fileID: 2100000, guid: cca65ec86bf261b4f8c6acf5090f4a04, type: 2}
   _SampleCount: 10
   _SampleInterval: 0.1
@@ -809,6 +815,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -820,6 +827,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -970,10 +978,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c67148724d71d014f9c76d65aa4beab0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -981,6 +990,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1018,7 +1028,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7902466948553159637}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.2, y: -0.02, z: 0.8}
+  m_LocalPosition: {x: 0, y: -0.02, z: 0.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1970412272801721905}
@@ -1103,6 +1113,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1114,6 +1125,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1133,32 +1145,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7573216279359125480}
     m_Modifications:
-    - target: {fileID: 6244249464563980142, guid: 7f828bf3a7451b94a9a34795e4be5d18,
-        type: 3}
-      propertyPath: m_Name
-      value: GrenadeGun
-      objectReference: {fileID: 0}
-    - target: {fileID: 6244249464563980142, guid: 7f828bf3a7451b94a9a34795e4be5d18,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6468803112852489679, guid: 7f828bf3a7451b94a9a34795e4be5d18,
-        type: 3}
-      propertyPath: _config
-      value: 
-      objectReference: {fileID: 11400000, guid: 8ee7002105d05c14a9b2526e16cb87e1,
-        type: 2}
-    - target: {fileID: 6468803112852489679, guid: 7f828bf3a7451b94a9a34795e4be5d18,
-        type: 3}
-      propertyPath: _firePoint
-      value: 
-      objectReference: {fileID: 6645264379715970967}
-    - target: {fileID: 6468803112852489679, guid: 7f828bf3a7451b94a9a34795e4be5d18,
-        type: 3}
-      propertyPath: _clipPoint
-      value: 
-      objectReference: {fileID: 4308655596582248124}
     - target: {fileID: 3907551800265181296, guid: 7f828bf3a7451b94a9a34795e4be5d18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1214,6 +1200,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6244249464563980142, guid: 7f828bf3a7451b94a9a34795e4be5d18,
+        type: 3}
+      propertyPath: m_Name
+      value: GrenadeGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6244249464563980142, guid: 7f828bf3a7451b94a9a34795e4be5d18,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6468803112852489679, guid: 7f828bf3a7451b94a9a34795e4be5d18,
+        type: 3}
+      propertyPath: _config
+      value: 
+      objectReference: {fileID: 11400000, guid: 8ee7002105d05c14a9b2526e16cb87e1,
+        type: 2}
+    - target: {fileID: 6468803112852489679, guid: 7f828bf3a7451b94a9a34795e4be5d18,
+        type: 3}
+      propertyPath: _firePoint
+      value: 
+      objectReference: {fileID: 6645264379715970967}
+    - target: {fileID: 6468803112852489679, guid: 7f828bf3a7451b94a9a34795e4be5d18,
+        type: 3}
+      propertyPath: _clipPoint
+      value: 
+      objectReference: {fileID: 4308655596582248124}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f828bf3a7451b94a9a34795e4be5d18, type: 3}
 --- !u!4 &4308655596582248124 stripped
@@ -1253,21 +1265,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7573216279359125480}
     m_Modifications:
-    - target: {fileID: 6244249464563980142, guid: 39b72c90c63572947b9ff986b8fde811,
+    - target: {fileID: 2211517484219258854, guid: 39b72c90c63572947b9ff986b8fde811,
         type: 3}
-      propertyPath: m_Name
-      value: FristGun
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 6468803112852489679, guid: 39b72c90c63572947b9ff986b8fde811,
+    - target: {fileID: 2211517484219258854, guid: 39b72c90c63572947b9ff986b8fde811,
         type: 3}
-      propertyPath: _firePoint
-      value: 
-      objectReference: {fileID: 4879162422698313341}
-    - target: {fileID: 6468803112852489679, guid: 39b72c90c63572947b9ff986b8fde811,
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211517484219258854, guid: 39b72c90c63572947b9ff986b8fde811,
         type: 3}
-      propertyPath: _clipPoint
-      value: 
-      objectReference: {fileID: 2613661796175740758}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 3907551800265181296, guid: 39b72c90c63572947b9ff986b8fde811,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1323,21 +1335,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2211517484219258854, guid: 39b72c90c63572947b9ff986b8fde811,
+    - target: {fileID: 6244249464563980142, guid: 39b72c90c63572947b9ff986b8fde811,
         type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      propertyPath: m_Name
+      value: FristGun
       objectReference: {fileID: 0}
-    - target: {fileID: 2211517484219258854, guid: 39b72c90c63572947b9ff986b8fde811,
+    - target: {fileID: 6468803112852489679, guid: 39b72c90c63572947b9ff986b8fde811,
         type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2211517484219258854, guid: 39b72c90c63572947b9ff986b8fde811,
+      propertyPath: _firePoint
+      value: 
+      objectReference: {fileID: 4879162422698313341}
+    - target: {fileID: 6468803112852489679, guid: 39b72c90c63572947b9ff986b8fde811,
         type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
+      propertyPath: _clipPoint
+      value: 
+      objectReference: {fileID: 2613661796175740758}
     - target: {fileID: 8737881296228462285, guid: 39b72c90c63572947b9ff986b8fde811,
         type: 3}
       propertyPath: m_LocalRotation.y
