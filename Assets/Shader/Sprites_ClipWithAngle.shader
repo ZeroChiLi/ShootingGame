@@ -1,4 +1,4 @@
-﻿// 支持角度剔除的Sprite(扇形)，修改至"Sprites/Default"
+// 支持角度剔除的Sprite(扇形)，修改至"Sprites/Default"
 Shader "Sprites/ClipWithAngle"
 {
     Properties
@@ -10,7 +10,8 @@ Shader "Sprites/ClipWithAngle"
         [HideInInspector] _Flip ("Flip", Vector) = (1,1,1,1)
         [PerRendererData] _AlphaTex ("External Alpha", 2D) = "white" {}
         [PerRendererData] _EnableExternalAlpha ("Enable External Alpha", Float) = 0
-		_Angle ("Angle", Range(0, 360)) = 360
+		_StartClipAngle ("StartClipAngle", Range(0, 360)) = 0
+		_ClipAngleRange ("ClipAngleRange", Range(0, 360)) = 360
     }
 
     SubShader
@@ -40,7 +41,8 @@ Shader "Sprites/ClipWithAngle"
             #pragma multi_compile _ ETC1_EXTERNAL_ALPHA
             #include "UnitySprites.cginc"
 
-			float _Angle;
+			float _ClipAngleRange;
+			float _StartClipAngle;
 			
 			fixed4 SpriteFragWithAngle(v2f IN) : SV_Target
 			{
@@ -48,14 +50,22 @@ Shader "Sprites/ClipWithAngle"
 				c.rgb *= c.a;
 
 				// 容错接近0和360度
-				if (_Angle < 0.001)
+				if (_ClipAngleRange < 0.001)
 				{
 					discard;
 				}
-				else if (_Angle < 359.999)
+				else if (_ClipAngleRange < 359.999)
 				{
-					// 剔除小于指定范围角度的
-					clip(-atan2((IN.texcoord.y - 0.5) , (IN.texcoord.x - 0.5)) + ((_Angle - 180) / 57.32484));
+					// 计算角度
+					float angle = atan2((IN.texcoord.y - 0.5), (IN.texcoord.x - 0.5)) * 57.32484 + 180;
+					if (angle >= _StartClipAngle)
+					{
+						clip(_ClipAngleRange - angle + _StartClipAngle);	// 角度偏移 _StartClipAngle
+					}
+					else if (angle > (_ClipAngleRange + _StartClipAngle - 360))	// 旋转角度超过一圈的也要保留
+					{
+						discard;
+					}
 				}
 				return c;
 			}
